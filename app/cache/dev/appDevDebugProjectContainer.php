@@ -213,7 +213,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'usuarios', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => '', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'comunidad', 'host' => 'localhost', 'port' => '', 'user' => 'comunidad', 'password' => 'comunidad', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
     }
 
     /**
@@ -2151,9 +2151,9 @@ class appDevDebugProjectContainer extends Container
             'database_driver' => 'pdo_mysql',
             'database_host' => 'localhost',
             'database_port' => '',
-            'database_name' => 'usuarios',
-            'database_user' => 'root',
-            'database_password' => '',
+            'database_name' => 'comunidad',
+            'database_user' => 'comunidad',
+            'database_password' => 'comunidad',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',

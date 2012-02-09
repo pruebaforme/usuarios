@@ -80,7 +80,7 @@ class Usuario
     /**
      * @var array $inmuebles
      *
-     * @ORM\ManyToMany(targetEntity="Inmueble", mappedBy="usuarios")
+     * @ORM\ManyToMany(targetEntity="Comunidad\UsersBundle\Entity\Inmuebles", mappedBy="usuarios")
      * @ORM\JoinColumn(name="inmuebles_id", referencedColumnName="id")
      * @ORM\Column(name="inmuebles", type="array")
      */

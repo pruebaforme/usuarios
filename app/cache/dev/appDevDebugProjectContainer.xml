@@ -28,9 +28,9 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port"></parameter>
-    <parameter key="database_name">usuarios</parameter>
-    <parameter key="database_user">root</parameter>
-    <parameter key="database_password"></parameter>
+    <parameter key="database_name">comunidad</parameter>
+    <parameter key="database_user">comunidad</parameter>
+    <parameter key="database_password">comunidad</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1735,11 +1735,11 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">usuarios</argument>
+        <argument key="dbname">comunidad</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
-        <argument key="user">root</argument>
-        <argument key="password"></argument>
+        <argument key="user">comunidad</argument>
+        <argument key="password">comunidad</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
