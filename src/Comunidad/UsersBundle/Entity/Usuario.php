@@ -81,8 +81,6 @@ class Usuario
      * @var array $inmuebles
      *
      * @ORM\ManyToMany(targetEntity="Inmueble", mappedBy="usuarios")
-     * @ORM\JoinColumn(name="inmuebles_id", referencedColumnName="id")
-     * @ORM\Column(name="inmuebles", type="array")
      */
     private $inmuebles;
 
