@@ -94,9 +94,11 @@ class Inmueble
     /**
      * @var array $usuarios
      *
-     * @ORM\ManyToMany(targetEntity="Usuario", mappedBy="inmuebles")
-     * @ORM\JoinColumn(name="usuarios_id", referencedColumnName="id")
-     * @ORM\Column(name="usuarios", type="array")
+     * @ORM\ManyToMany(targetEntity="Usuario", inversedBy="inmuebles")
+     * @ORM\JoinTable(name="inmueble_usuario",
+     *		joinColumns={@ORM\JoinColumn(name="inmueble_id", referencedColumnName="id")},
+     *		inverseJoinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")}
+     *		)
      */
     private $usuarios;
 
