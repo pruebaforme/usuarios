@@ -1,6 +1,7 @@
 <?php
 
 namespace Comunidad\UsersBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -94,7 +95,7 @@ class Inmueble
     /**
      * @var array $usuarios
      *
-     * @ORM\ManyToMany(targetEntity="Usuario", inversedBy="inmuebles")
+     * @ORM\ManyToMany(targetEntity="Usuario", inversedBy="inmuebles", cascade={"persist"})
      * @ORM\JoinTable(name="inmueble_usuario",
      *		joinColumns={@ORM\JoinColumn(name="inmueble_id", referencedColumnName="id")},
      *		inverseJoinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")}
@@ -102,6 +103,10 @@ class Inmueble
      */
     private $usuarios;
 
+    public function __construct()
+    {
+        $this->usuarios = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -116,7 +121,7 @@ class Inmueble
     /**
      * Set num_personas
      *
-     * @param string $numPersonas
+     * @param integer $numPersonas
      */
     public function setNumPersonas($numPersonas)
     {
@@ -126,7 +131,7 @@ class Inmueble
     /**
      * Get num_personas
      *
-     * @return string 
+     * @return integer 
      */
     public function getNumPersonas()
     {
@@ -332,8 +337,5 @@ class Inmueble
     {
         return $this->usuarios;
     }
-    public function __toString()
-    {
-	return $this->getNombre();
-    }
+   
 }

@@ -4,6 +4,7 @@ namespace Comunidad\UsersBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Comunidad\UsersBundle\Entity\Inmueble;
+use Comunidad\UsersBundle\Entity\Usuario;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
@@ -27,10 +28,17 @@ class inmuebles implements FixtureInterface
 	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
  'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo'))
 	    );*/    
+	
+	$usuarios = $manager->getRepository('UsersBundle:Usuario')->findAll();  
 
 	$inmuebles = array(
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array()));
+	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
+ 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios),
+	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
+ 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios),
+	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
+ 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios)
+		);
 	
         foreach ($inmuebles as $inmueble) {
             $entidad = new Inmueble();

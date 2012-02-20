@@ -1,6 +1,7 @@
 <?php
 
 namespace Comunidad\UsersBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -80,10 +81,14 @@ class Usuario
     /**
      * @var array $inmuebles
      *
-     * @ORM\ManyToMany(targetEntity="Inmueble", mappedBy="usuarios")
+     * @ORM\ManyToMany(targetEntity="Inmueble", mappedBy="usuarios", cascade={"persist"})
      */
     private $inmuebles;
 
+    public function __construct()
+    {
+        $this->usuarios = new ArrayCollection();
+    }
     /**
      * Get id
      *
@@ -254,8 +259,31 @@ class Usuario
         return $this->ciudad;
     }
 
+    /**
+     * Set inmuebles
+     *
+     * @param array $inmuebles
+     */
+
+    public function setInmuebles($inmuebles)
+    {
+        $this->inmuebles = $inmuebles;
+    }
+
+    /**
+     * Get inmuebles
+     *
+     * @return array 
+     */
+    public function getInmuebles()
+    {
+        return $this->inmuebles;
+    }
+
     public function __toString()
     {
 	return $this->getNombre();
     }
+
+    
 }

@@ -3,15 +3,14 @@
 namespace Comunidad\UsersBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Comunidad\UsersBundle\Entity\Inmueble;
 use Comunidad\UsersBundle\Entity\Usuario;
 use Doctrine\Common\Persistence\ObjectManager;
 
 /**
- * Fixtures de la entidad Inmueble.
- * Crea 10 inmuebles para poder probar la aplicación.
+ * Fixtures de la entidad Usuarios.
+ * Crea 10 usuarios para poder probar la aplicación.
  */
-class inmuebles implements FixtureInterface
+class usuarios implements FixtureInterface
 {
     
     public function load(ObjectManager $manager)
@@ -28,32 +27,33 @@ class inmuebles implements FixtureInterface
 	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
  'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo'))
 	    );*/    
-	
-	$usuarios = $manager->getRepository('UsersBundle:Usuario')->findAll();  
 
+	$inmuebles = $manager->getRepository('UsersBundle:Inmueble')->findAll();
+	foreach ($inmuebles as $inmueble){
 
-	$inmuebles = array(
-	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios),
-	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios),
-	  array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => $usuarios)
-		);
+	$inmuebles_id[] = $inmueble->getId(); 
+	} 
+
+	$usuarios = array(
+	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id),
+	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id),
+	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id)
+		     );
 	
-        foreach ($inmuebles as $inmueble) {
-            $entidad = new Inmueble();
-            $entidad->setNumPersonas($inmueble['num_persona']);
-	    $entidad->setOcupado($inmueble['ocupado']);
-	    $entidad->setVia($inmueble['via']);
-	    $entidad->setNumero($inmueble['numero']);
-	    $entidad->setBloque($inmueble['bloque']);
-	    $entidad->setPuerta($inmueble['puerta']);
-	    $entidad->setPlanta($inmueble['planta']);
-	    $entidad->setNombreCalle($inmueble['nombre_calle']);
-	    $entidad->setNombrePropietario($inmueble['nombre_propietario']);
-	    $entidad->setHabitaciones($inmueble['habitaciones']);
-	    $entidad->setUsuarios($inmueble['usuarios']);
+        foreach ($usuarios as $usuario) {
+            $entidad = new Usuario();
+            $entidad->setNombre($usuario['nombre']);
+	    $entidad->setApellidos($usuario['apellidos']);
+	    $entidad->setEmail($usuario['email']);
+	    $entidad->setPassword($usuario['password']);
+	    $entidad->setDireccion($usuario['direccion']);
+	    $entidad->setPermiteEmail($usuario['permite_email']);
+	    $entidad->setDni($usuario['dni']);
+	    $entidad->setCiudad($usuario['ciudad']);
+	    $entidad->setInmuebles($usuario['inmuebles']);
             
             $manager->persist($entidad);
         }
