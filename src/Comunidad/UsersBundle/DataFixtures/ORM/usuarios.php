@@ -15,29 +15,18 @@ class usuarios implements FixtureInterface
     
     public function load(ObjectManager $manager)
     {
-        /*$inmuebles = array(
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo')),
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo')),
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo')),
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo')),
-	    array('num_persona' => '4', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
- 'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Juan', 'habitaciones' => '3', 'usuarios' => array('Juan', 'Pepa', 'Manolo'))
-	    );*/    
+         
 
-	$inmuebles = $manager->getRepository('UsersBundle:Inmueble')->findAll();
-
+		
 	$usuarios = array(
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
- 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles),
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => array()),
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
  'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles),
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
  'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles)
-		     );
+	  );
+	
 	
         foreach ($usuarios as $usuario) {
             $entidad = new Usuario();

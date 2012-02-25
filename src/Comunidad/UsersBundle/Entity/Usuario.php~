@@ -79,7 +79,7 @@ class Usuario
     private $ciudad;
 
     /**
-     * @var array $inmuebles
+     * 
      *
      * @ORM\ManyToMany(targetEntity="Inmueble", mappedBy="usuarios", cascade={"persist"})
      */
@@ -257,6 +257,32 @@ class Usuario
     public function getCiudad()
     {
         return $this->ciudad;
+    }
+
+    /**
+     * Set inmuebles
+     *
+     * @param Comunidad\UsersBundle\Entity\Inmueble $inmuebles
+     */
+
+    public function setInmuebles($inmuebles)
+    {
+        $this->inmuebles = $inmuebles;
+    }
+
+    /**
+     * Get inmuebles
+     *
+     * @return Comunidad\UsersBundle\Entity\Inmueble
+     */
+    public function getInmuebles()
+    {
+        return $this->inmuebles;
+    }
+
+    public function __toString()
+    {
+	return $this->getNombre();
     }
 
     

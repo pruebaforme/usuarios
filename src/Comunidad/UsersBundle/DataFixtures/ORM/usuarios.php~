@@ -29,19 +29,17 @@ class usuarios implements FixtureInterface
 	    );*/    
 
 	$inmuebles = $manager->getRepository('UsersBundle:Inmueble')->findAll();
-	foreach ($inmuebles as $inmueble){
 
-	$inmuebles_id[] = $inmueble->getId(); 
-	} 
-
+		
 	$usuarios = array(
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
- 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id),
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => array()),
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
- 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id),
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles),
 	  array('nombre' => 'Antonio', 'apellidos' => 'Rodriguez', 'email' => 'ajfñlakjflñaks', 'password' => 'asfasfasd', 'direccion' => 'lajfñaksj',
- 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles_id)
-		     );
+ 'permite_email' => 'true', 'dni' => 'asfasf', 'ciudad' => 'asfasdf', 'inmuebles' => $inmuebles)
+	  );
+	
 	
         foreach ($usuarios as $usuario) {
             $entidad = new Usuario();

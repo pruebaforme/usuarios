@@ -93,7 +93,7 @@ class Inmueble
     private $habitaciones;
 
     /**
-     * @var array $usuarios
+     * 
      *
      * @ORM\ManyToMany(targetEntity="Usuario", inversedBy="inmuebles", cascade={"persist"})
      * @ORM\JoinTable(name="inmueble_usuario",
@@ -121,7 +121,7 @@ class Inmueble
     /**
      * Set num_personas
      *
-     * @param string $numPersonas
+     * @param integer $numPersonas
      */
     public function setNumPersonas($numPersonas)
     {
@@ -131,7 +131,7 @@ class Inmueble
     /**
      * Get num_personas
      *
-     * @return string 
+     * @return integer 
      */
     public function getNumPersonas()
     {
