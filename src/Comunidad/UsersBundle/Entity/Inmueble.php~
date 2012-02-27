@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comunidad\UsersBundle\Entity\Inmueble
  *
  * @ORM\Table(name="Comunidad_Inmuebles")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Comunidad/UsersBundle/Entity/InmuebleRepository")
  */
 class Inmueble
 {
@@ -321,7 +321,7 @@ class Inmueble
     /**
      * Set usuarios
      *
-     * @param array $usuarios
+     * @param Comunidad\UsersBundle\Entity\Usuario $usuarios
      */
     public function setUsuarios($usuarios)
     {
@@ -331,7 +331,7 @@ class Inmueble
     /**
      * Get usuarios
      *
-     * @return array 
+     * @return Comunidad\UsersBundle\Entity\Usuario
      */
     public function getUsuarios()
     {

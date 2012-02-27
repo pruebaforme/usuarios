@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comunidad\UsersBundle\Entity\Inmueble
  *
  * @ORM\Table(name="Comunidad_Inmuebles")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Comunidad/UsersBundle/Entity/InmuebleRepository")
  */
 class Inmueble
 {

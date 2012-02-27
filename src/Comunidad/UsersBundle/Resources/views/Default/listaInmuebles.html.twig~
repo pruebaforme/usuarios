@@ -1,0 +1,5 @@
+<select id="inmuebles">
+    {% for inmueble in inmuebles %}
+        {{ inmueble.via }}
+    {% endfor %}
+</select> 

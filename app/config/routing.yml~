@@ -2,6 +2,9 @@ UsersBundle:
     resource: "@UsersBundle/Resources/config/routing.yml"
     prefix:   /
 
+inmuebles:
+    pattern:  /inmuebles
+    defaults: { _controller: UsersBundle:Default:listaInmuebles }
 
 # Internal routing configuration to handle ESI
 #_internal:

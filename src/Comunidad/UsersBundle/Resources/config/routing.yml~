@@ -3,5 +3,5 @@ UsersBundle_homepage:
     defaults: { _controller: UsersBundle:Default:index }
 
 inmuebles:
-    pattern:  /inmuebles
+    pattern:  /inmuebles/
     defaults: { _controller: UsersBundle:Default:listaInmuebles }
