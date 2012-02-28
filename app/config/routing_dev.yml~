@@ -1,6 +1,6 @@
 _welcome:
     pattern:  /
-    defaults: { _controller: UsersBundle:Default:index }
+    defaults: { _controller: UsersBundle:Default:listaInmuebles }
 
 _assetic:
     resource: .

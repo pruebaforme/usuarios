@@ -1,6 +1,6 @@
 <?php
 
-namespace Comunidad/UsersBundle/Entity;
+namespace Comunidad\UsersBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -12,6 +12,7 @@ class InmuebleRepository extends EntityRepository
       $em = $this->getEntityManager();
 
       $consulta = $em->createQuery('SELECT i FROM UsersBundle:Inmueble i');
+      $consulta->useResultCache(true, 3600);
                 
       return $consulta->getArrayResult();
 
