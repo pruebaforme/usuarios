@@ -1,0 +1,5 @@
+<form>
+<input type="radio" name="eleccion" value="inmuebles" /> Mostrar inmuebles de un usuario<br />
+<input type="radio" name="eleccion" value="usuarios" /> Mostrar ususarios de un inmueble<br />
+<input type="submit" value="Consultar" />
+</form>

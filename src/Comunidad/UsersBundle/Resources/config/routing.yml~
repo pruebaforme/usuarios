@@ -1,7 +1,11 @@
-# UsersBundle_homepage:
-#     pattern:  /hello/{name}
-#     defaults: { _controller: UsersBundle:Default:index }
+inicio:
+    pattern:  /index
+    defaults: { _controller: UsersBundle:Default:inicio }
 
 inmuebles:
     pattern:  /inmuebles
     defaults: { _controller: UsersBundle:Default:listaInmuebles }
+
+inmuebles_usuarios:
+    pattern:  /inmuebles_users
+    defaults: { _controller: UsersBundle:Default:listaUsuariosInmueble }

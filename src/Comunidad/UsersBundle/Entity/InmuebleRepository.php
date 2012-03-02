@@ -16,5 +16,17 @@ class InmuebleRepository extends EntityRepository
       return $consulta->getArrayResult();
 
   }
+  
+  public function findListaUsuariosInmuebles()
+  {
+      $em = $this->getEntityManager();
+
+      $consulta = $em->createQuery('SELECT i,u FROM UsersBundle:Inmueble i
+				      JOIN i.usuarios u ');
+                
+      return $consulta->getArrayResult();
+
+  }
+ 
 }
  

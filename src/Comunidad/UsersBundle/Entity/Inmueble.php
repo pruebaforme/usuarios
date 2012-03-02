@@ -331,7 +331,7 @@ class Inmueble
     /**
      * Get usuarios
      *
-     * @return Comunidad\UsersBundle\Entity\Usuario
+     * @return Doctrine\Common\Collections\Collection $usuarios
      */
     public function getUsuarios()
     {

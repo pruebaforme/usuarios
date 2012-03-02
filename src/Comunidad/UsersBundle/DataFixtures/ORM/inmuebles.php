@@ -88,8 +88,8 @@ class inmuebles extends AbstractFixture implements OrderedFixtureInterface
 	    $entidad->setNombreCalle($inmueble['nombre_calle']);
 	    $entidad->setNombrePropietario($inmueble['nombre_propietario']);
 	    $entidad->setHabitaciones($inmueble['habitaciones']);
-	    $entidad->setUsuarios($inmueble['usuarios']);
-            
+	    $entidad->setUsuarios($inmueble['usuarios']);  
+
             $manager->persist($entidad);
         }
         

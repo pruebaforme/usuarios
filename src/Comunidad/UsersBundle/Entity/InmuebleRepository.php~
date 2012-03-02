@@ -12,10 +12,21 @@ class InmuebleRepository extends EntityRepository
       $em = $this->getEntityManager();
 
       $consulta = $em->createQuery('SELECT i FROM UsersBundle:Inmueble i');
-      $consulta->useResultCache(true, 3600);
                 
       return $consulta->getArrayResult();
 
   }
+  
+  public function findListaUsuariosInmuebles()
+  {
+      $em = $this->getEntityManager();
+
+      $consulta = $em->createQuery('SELECT i,u FROM UsersBundle:Inmueble i
+				      JOIN i.usuarios u ');
+                
+      return $consulta->getArrayResult();
+
+  }
+ 
 }
  

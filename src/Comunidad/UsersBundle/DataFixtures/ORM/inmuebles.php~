@@ -68,11 +68,11 @@ class inmuebles extends AbstractFixture implements OrderedFixtureInterface
 // 	print_r ($obj);
 
 	$inmuebles = array(
-	  array('num_personas' => '4', 'ocupado' => 'true', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
+	  array('num_personas' => '4', 'ocupado' => '1', 'via' => 'calle', 'numero' => '2', 'bloque' => '5',
  'puerta' => 'D', 'planta' => '1', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Antonio', 'habitaciones' => '3', 'usuarios' => array($usuarios[0], $usuarios[3], $usuarios[4])),
-	  array('num_personas' => '3', 'ocupado' => 'true', 'via' => 'calle', 'numero' => '4', 'bloque' => '2',
+	  array('num_personas' => '3', 'ocupado' => '1', 'via' => 'calle', 'numero' => '4', 'bloque' => '2',
  'puerta' => 'A', 'planta' => '2', 'nombre_calle' => 'Pelayo', 'nombre_propietario' => 'Juan', 'habitaciones' => '4', 'usuarios' => array($usuarios[1], $usuarios[5], $usuarios[6])),
-	  array('num_personas' => '5', 'ocupado' => 'false', 'via' => 'calle', 'numero' => '3', 'bloque' => '6',
+	  array('num_personas' => '5', 'ocupado' => '0', 'via' => 'calle', 'numero' => '3', 'bloque' => '6',
  'puerta' => 'D', 'planta' => '4', 'nombre_calle' => 'Eduardo', 'nombre_propietario' => 'Maria', 'habitaciones' => '3', 'usuarios' => array($usuarios[2], $usuarios[7], $usuarios[8]))
 		);
 	
@@ -88,8 +88,9 @@ class inmuebles extends AbstractFixture implements OrderedFixtureInterface
 	    $entidad->setNombreCalle($inmueble['nombre_calle']);
 	    $entidad->setNombrePropietario($inmueble['nombre_propietario']);
 	    $entidad->setHabitaciones($inmueble['habitaciones']);
-	    $entidad->setUsuarios($inmueble['usuarios']);
-            
+	    $entidad->setUsuarios($inmueble['usuarios']);  
+
+	    print_r($entidad->getUsuarios());
             $manager->persist($entidad);
         }
         

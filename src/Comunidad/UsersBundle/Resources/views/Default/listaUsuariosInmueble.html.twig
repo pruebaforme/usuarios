@@ -1,0 +1,7 @@
+{% for inmueble in inmuebles %}
+    
+    {% for usuario in {{ inmueble.usuarios }} %}
+	  {{ usuario.dni }}
+    {% endfor %}
+    
+{% endfor %} 

@@ -1,5 +1,31 @@
-<select id="inmuebles">
-    {% for inmueble in inmuebles %}
-        {{ inmueble.via }}
-    {% endfor %}
-</select> 
+<h3>Seleccione un inmueble: <br></h1>
+
+
+
+<table class="lista_inmuebles">
+    <tbody>
+        <tr>
+            <th><b>Via</b></th>
+	    <th><b>Nombre via</b></th>
+	    <th><b>Número</b></th>
+	    <th><b>Bloque</b></th>
+	    <th><b>Puerta</b></th>
+	    <th><b>Planta</b></th>
+        </tr>
+	{% for inmueble in inmuebles %}
+        <tr>
+            <td align=center>{{ inmueble.via }}</td>
+	    <td align=center>{{ inmueble.nombre_calle }}</td>
+	    <td align=center>{{ inmueble.numero }}</td>
+	    <td align=center>{{ inmueble.bloque }}</td>
+	    <td align=center>{{ inmueble.puerta }}</td>
+	    <td align=center>{{ inmueble.planta }}</td>
+	    <td align=center><input type="radio" name="{{ inmueble.id }}"></td>
+	 {% endfor %}
+	    
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<input type="submit" value="Consultar" />
