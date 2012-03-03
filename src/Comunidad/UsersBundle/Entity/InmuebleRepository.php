@@ -17,14 +17,17 @@ class InmuebleRepository extends EntityRepository
 
   }
   
-  public function findListaUsuariosInmuebles()
+  public function findListaUsuariosInmuebles($inmueble_id)
   {
       $em = $this->getEntityManager();
 
-      $consulta = $em->createQuery('SELECT i,u FROM UsersBundle:Inmueble i
-				      JOIN i.usuarios u ');
+//       $consulta = $em->createQuery('SELECT i,u FROM UsersBundle:Inmueble i
+// 				      JOIN i.usuarios u ');
+      $consulta = $em->createQuery('SELECT i FROM UsersBundle:Inmueble i
+				      WHERE i.id = :id ');
+      $consulta->setParameter('id', $inmueble_id);
                 
-      return $consulta->getArrayResult();
+      return $consulta->getResult();
 
   }
  

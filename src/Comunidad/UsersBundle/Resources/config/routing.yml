@@ -1,11 +1,15 @@
-inicio:
-    pattern:  /index
+primer_paso:
+    pattern:  /inicio
     defaults: { _controller: UsersBundle:Default:inicio }
 
 inmuebles:
     pattern:  /inmuebles
     defaults: { _controller: UsersBundle:Default:listaInmuebles }
 
+usuarios:
+    pattern:  /usuarios
+    defaults: { _controller: UsersBundle:Default:listaUsuarios }
+
 inmuebles_usuarios:
-    pattern:  /inmuebles_users
+    pattern:  /inmuebles/{inmueble_id}
     defaults: { _controller: UsersBundle:Default:listaUsuariosInmueble }

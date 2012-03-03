@@ -1,7 +1,8 @@
 {% for inmueble in inmuebles %}
     
-    {% for usuario in {{ inmueble.usuarios }} %}
-	  {{ usuario.dni }}
+    {% set arrays = inmueble.usuarios %}
+    {% for array in arrays %}
+    {{ array.nombre }}
     {% endfor %}
     
 {% endfor %} 

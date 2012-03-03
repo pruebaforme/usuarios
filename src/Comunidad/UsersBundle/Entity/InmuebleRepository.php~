@@ -23,8 +23,9 @@ class InmuebleRepository extends EntityRepository
 
       $consulta = $em->createQuery('SELECT i,u FROM UsersBundle:Inmueble i
 				      JOIN i.usuarios u ');
+ 
                 
-      return $consulta->getArrayResult();
+      return $consulta->getResult();
 
   }
  

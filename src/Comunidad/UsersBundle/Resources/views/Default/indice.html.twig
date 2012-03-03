@@ -1,5 +1,27 @@
+{#
 <form>
-<input type="radio" name="eleccion" value="inmuebles" /> Mostrar inmuebles de un usuario<br />
+<input type="radio" name="" value="inmuebles" /> Mostrar inmuebles de un usuario<br />
 <input type="radio" name="eleccion" value="usuarios" /> Mostrar ususarios de un inmueble<br />
 <input type="submit" value="Consultar" />
 </form>
+#}
+
+{#
+<form action="{{ path('primer_paso') }}" method="post" {{
+form_enctype(formulario) }}>
+    {{ form_widget(formulario) }}
+    <input class="boton" type="submit" value="Eleccion" />
+</form>
+#}
+
+<h1> Elige entre una de estas opciones: <h1>
+
+<ul>
+  <li>
+      <a href="{{ path('usuarios') }}">Mostrar inmuebles de un usuario</a>
+  </li>
+  <li>
+      <a href="{{ path('inmuebles') }}">Mostrar usuarios de un inmueble</a>
+  </li>
+  
+</ul>
