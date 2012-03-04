@@ -5,24 +5,23 @@
 <table class="lista_usuarios">
     <tbody>
         <tr>
-            <th><b>Via</b></th>
-	    <th><b>Nombre via</b></th>
-	    <th><b>Número</b></th>
-	    <th><b>Bloque</b></th>
-	    <th><b>Puerta</b></th>
-	    <th><b>Planta</b></th>
+            <th><b>Nombre</b></th>
+	    <th><b>Apellidos</b></th>
+	    <th><b>Direccion</b></th>
+	    <th><b>Ciudad</b></th>
         </tr>
 	{% for usuario in usuarios %}
         <tr>
-            <td align=center>{{ inmueble.via }}</td>
-	    <td align=center>{{ inmueble.nombre_calle }}</td>
-	    <td align=center>{{ inmueble.numero }}</td>
-	    <td align=center>{{ inmueble.bloque }}</td>
-	    <td align=center>{{ inmueble.puerta }}</td>
-	    <td align=center>{{ inmueble.planta }}</td>
-	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id': inmueble.id }) }}">Seleccionar</a></td>
+            <td align=center>{{ usuario.nombre }}</td>
+	    <td align=center>{{ usuario.apellidos }}</td>
+	    <td align=center>{{ usuario.direccion }}</td>
+	    <td align=center>{{ usuario.ciudad }}</td>
+	    <td align=center><a href="{{ path('usuarios_inmuebles', { 'usuario_id': usuario.id }) }}">Seleccionar</a></td>
 	 {% endfor %}
 	    
         </tr>
     </tbody>
 </table> 
+
+<br>
+<a href="{{ path('primer_paso') }}">Volver</a>

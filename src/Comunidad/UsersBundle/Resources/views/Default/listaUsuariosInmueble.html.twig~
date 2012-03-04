@@ -12,7 +12,10 @@
 {% for atributos in inmueble %}
 
     {% for usuario in atributos.usuarios %}
-	Nombre_inquilino: {{ usuario.nombre }}
+	<p><b>Nombre_inquilino:</b> {{ usuario.nombre }}</p>
     {% endfor %}
 
 {% endfor %}
+
+<br>
+<a href="{{ path('inmuebles') }}">Volver</a>

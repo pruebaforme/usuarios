@@ -1,5 +1,5 @@
 
-<h3>Seleccione un inmueble: <br></h1>
+<h1>Seleccione un inmueble: <br></h1>
 
 
 <table class="lista_inmuebles">
@@ -21,13 +21,12 @@
 	    <td align=center>{{ inmueble.puerta }}</td>
 	    <td align=center>{{ inmueble.planta }}</td>
 	    {#<td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id':'{{ inmueble.id }}'}) }}">Seleccionar</a></td>#}
-	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble.id': inmueble.id }) }}">Seleccionar</a></td>
+	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id': inmueble.id }) }}">Seleccionar</a></td>
 	 {% endfor %}
 	    
         </tr>
     </tbody>
 </table>
-{#
+
 <br>
-<input type="submit" value="Consultar" />
-#}
+<a href="{{ path('inicio') }}">Volver</a>
