@@ -1,0 +1,13 @@
+{% for atributos in usuario %}
+
+    {% for inmueble in atributos.inmuebles %}
+	<p><b>Tipo_via:</b> {{ inmueble.via }}</p>
+	{# nombre_calle se pasa sin el guión bajo, aunque no sé porque #}
+	<p><b>Nombre :</b> {{ inmueble.nombreCalle }}</p>
+	<p><b>Número:</b> {{ inmueble.numero }}</p>
+	<p><b>Bloque:</b> {{ inmueble.bloque }}</p>
+	<p><b>Puerta :</b> {{ inmueble.puerta }}</p>
+	<p><b>Planta :</b> {{ inmueble.planta }}</p>
+    {% endfor %}
+
+{% endfor %} 

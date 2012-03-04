@@ -30,27 +30,32 @@ class DefaultController extends Controller
 	$em = $this->getDoctrine()->getEntityManager();
 	$inmuebles = $em->getRepository('UsersBundle:Inmueble')->findListaInmuebles();
 
-
-// 	$formulario = $this->createFormBuilder($inmuebles)
-// 	   ->add($inmuebles[1])
-//  	   ->add($inmuebles[2])
-//  	   ->add($inmuebles[3])
-// 	->getForm();
-// 	return $this->render(
-// 	    'UsuarioBundle:Default:listaInmuebles.html.twig',
-// 	    array('formulario' => $formulario->createView())
-// 	);
-
-
 	
         return $this->render('UsersBundle:Default:listaInmuebles.html.twig', array('inmuebles' => $inmuebles));
+    }
+
+    public function listaUsuariosAction()
+    {
+	$em = $this->getDoctrine()->getEntityManager();
+	$usuarios = $em->getRepository('UsersBundle:Usuario')->findListaUsuarios();
+
+	
+        return $this->render('UsersBundle:Default:listaUsuarios.html.twig', array('usuarios' => $usuarios));
     }
 
     public function listaUsuariosInmuebleAction($inmueble_id)
     {
 	$em = $this->getDoctrine()->getEntityManager();
-	$inmuebles = $em->getRepository('UsersBundle:Inmueble')->findListaUsuariosInmuebles($inmueble_id);
+	$inmueble = $em->getRepository('UsersBundle:Inmueble')->findListaUsuariosInmuebles($inmueble_id);
 
-        return $this->render('UsersBundle:Default:listaUsuariosInmueble.html.twig', array('inmuebles' => $inmuebles));
+        return $this->render('UsersBundle:Default:listaUsuariosInmueble.html.twig', array('inmueble' => $inmueble));
+    }
+
+    public function listaInmueblesUsuarioAction($usuario_id)
+    {
+	$em = $this->getDoctrine()->getEntityManager();
+	$usuario = $em->getRepository('UsersBundle:Usuario')->findListaInmueblesUsuarios($usuario_id);
+
+        return $this->render('UsersBundle:Default:listaInmueblesUsuario.html.twig', array('usuario' => $usuario));
     }
 }

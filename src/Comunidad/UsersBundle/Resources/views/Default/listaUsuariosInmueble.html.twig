@@ -1,3 +1,4 @@
+{#
 {% for inmueble in inmuebles %}
     
     {% set arrays = inmueble.usuarios %}
@@ -6,3 +7,12 @@
     {% endfor %}
     
 {% endfor %} 
+#}
+
+{% for atributos in inmueble %}
+
+    {% for usuario in atributos.usuarios %}
+	<p><b>Nombre_inquilino:</b> {{ usuario.nombre }}</p>
+    {% endfor %}
+
+{% endfor %}

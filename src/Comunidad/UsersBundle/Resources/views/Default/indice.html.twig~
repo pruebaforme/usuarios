@@ -18,10 +18,10 @@ form_enctype(formulario) }}>
 
 <ul>
   <li>
-      <a href="{{ path('inmuebles') }}">Mostrar inmuebles de un usuario</a>
+      <a href="{{ path('usuarios') }}">Mostrar inmuebles de un usuario</a>
   </li>
   <li>
-      <a href="{{ path('usuarios') }}">Mostrar usuarios de un inmuebleo</a>
+      <a href="{{ path('inmuebles') }}">Mostrar usuarios de un inmueble</a>
   </li>
   
 </ul>

@@ -13,3 +13,11 @@ usuarios:
 inmuebles_usuarios:
     pattern:  /inmuebles/{inmueble_id}
     defaults: { _controller: UsersBundle:Default:listaUsuariosInmueble }
+    requirements:
+        inmueble_id: \d+
+
+usuarios_inmuebles:
+    pattern:  /usuarios/{usuario_id}
+    defaults: { _controller: UsersBundle:Default:listaInmueblesUsuario }
+    requirements:
+        inmueble_id: \d+

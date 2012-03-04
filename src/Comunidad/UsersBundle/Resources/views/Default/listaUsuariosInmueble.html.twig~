@@ -1,11 +1,18 @@
+{#
 {% for inmueble in inmuebles %}
     
-    {# {% for usuario in {{ inmueble.usuarios }} %}
-	  {{ usuario.dni }}
-    {% endfor %} #}
     {% set arrays = inmueble.usuarios %}
     {% for array in arrays %}
     {{ array.nombre }}
     {% endfor %}
     
 {% endfor %} 
+#}
+
+{% for atributos in inmueble %}
+
+    {% for usuario in atributos.usuarios %}
+	Nombre_inquilino: {{ usuario.nombre }}
+    {% endfor %}
+
+{% endfor %}

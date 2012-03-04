@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comunidad\UsersBundle\Entity\Usuario
  *
  * @ORM\Table(name="Comunidad_Usuarios")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Comunidad\UsersBundle\Entity\UsuarioRepository")
  */
 class Usuario
 {
@@ -273,7 +273,7 @@ class Usuario
     /**
      * Get inmuebles
      *
-     * @return Comunidad\UsersBundle\Entity\Inmueble
+     * @return Doctrine\Common\Collections\Collection $inmuebles
      */
     public function getInmuebles()
     {

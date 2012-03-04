@@ -20,7 +20,8 @@
 	    <td align=center>{{ inmueble.bloque }}</td>
 	    <td align=center>{{ inmueble.puerta }}</td>
 	    <td align=center>{{ inmueble.planta }}</td>
-	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id':'{{ inmueble.id }}'}) }}">Seleccionar</a></td>
+	    {#<td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id':'{{ inmueble.id }}'}) }}">Seleccionar</a></td>#}
+	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id': inmueble.id }) }}">Seleccionar</a></td>
 	 {% endfor %}
 	    
         </tr>

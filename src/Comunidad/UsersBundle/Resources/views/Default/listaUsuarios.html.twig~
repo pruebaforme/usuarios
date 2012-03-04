@@ -1,8 +1,8 @@
 
-<h3>Seleccione un inmueble: <br></h1>
+<h1>Seleccione un usuario: <br></h1>
 
 
-<table class="lista_inmuebles">
+<table class="lista_usuarios">
     <tbody>
         <tr>
             <th><b>Via</b></th>
@@ -12,7 +12,7 @@
 	    <th><b>Puerta</b></th>
 	    <th><b>Planta</b></th>
         </tr>
-	{% for inmueble in inmuebles %}
+	{% for usuario in usuarios %}
         <tr>
             <td align=center>{{ inmueble.via }}</td>
 	    <td align=center>{{ inmueble.nombre_calle }}</td>
@@ -20,14 +20,9 @@
 	    <td align=center>{{ inmueble.bloque }}</td>
 	    <td align=center>{{ inmueble.puerta }}</td>
 	    <td align=center>{{ inmueble.planta }}</td>
-	    {#<td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id':'{{ inmueble.id }}'}) }}">Seleccionar</a></td>#}
-	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble.id': inmueble.id }) }}">Seleccionar</a></td>
+	    <td align=center><a href="{{ path('inmuebles_usuarios', { 'inmueble_id': inmueble.id }) }}">Seleccionar</a></td>
 	 {% endfor %}
 	    
         </tr>
     </tbody>
-</table>
-{#
-<br>
-<input type="submit" value="Consultar" />
-#}
+</table> 

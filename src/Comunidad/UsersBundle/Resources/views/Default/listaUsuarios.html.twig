@@ -1,0 +1,24 @@
+
+<h1>Seleccione un usuario: <br></h1>
+
+
+<table class="lista_usuarios">
+    <tbody>
+        <tr>
+            <th><b>Nombre</b></th>
+	    <th><b>Apellidos</b></th>
+	    <th><b>Direccion</b></th>
+	    <th><b>Ciudad</b></th>
+        </tr>
+	{% for usuario in usuarios %}
+        <tr>
+            <td align=center>{{ usuario.nombre }}</td>
+	    <td align=center>{{ usuario.apellidos }}</td>
+	    <td align=center>{{ usuario.direccion }}</td>
+	    <td align=center>{{ usuario.ciudad }}</td>
+	    <td align=center><a href="{{ path('usuarios_inmuebles', { 'usuario_id': usuario.id }) }}">Seleccionar</a></td>
+	 {% endfor %}
+	    
+        </tr>
+    </tbody>
+</table> 
